@@ -1,0 +1,16 @@
+2025-01-03 21:26:59,955 - __main__ - INFO - Program started
+2025-01-03 21:26:59,955 - src.data_loader - DEBUG - DataLoader initialized with data_dir: data
+2025-01-03 21:26:59,955 - src.openai_client - DEBUG - OpenAIClient initialized with model_name: gpt-4o-mini
+2025-01-03 21:26:59,955 - src.processor - DEBUG - Processor initialized
+2025-01-03 21:26:59,955 - src.visualizer - DEBUG - Visualizer initialized with output_dir: output
+2025-01-03 21:26:59,955 - src.processor - INFO - Starting processing of exam '2023_1형'
+2025-01-03 21:26:59,955 - __main__ - ERROR - An error occurred during exam processing: DataLoader.load_questions() takes 2 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/main.py", line 49, in process_single_exam
+    result = processor.process_exam(exam_name, start_num, end_num)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 28, in process_exam
+    questions = self.data_loader.load_questions(exam_name, start_num, end_num)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DataLoader.load_questions() takes 2 positional arguments but 4 were given
+2025-01-03 21:26:59,955 - __main__ - INFO - Program completed

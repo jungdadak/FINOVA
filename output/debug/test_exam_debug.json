@@ -1,0 +1,25 @@
+[
+  {
+    "question_id": "Q1",
+    "question_text": "What is the largest planet?",
+    "options": [
+      "1. Earth",
+      "2. Mars",
+      "3. Jupiter",
+      "4. Venus",
+      "5. Saturn"
+    ],
+    "gpt_response": {
+      "selected_answer": "3",
+      "reasoning": [
+        "1. Earth is not the largest planet.",
+        "2. Mars is smaller than Earth.",
+        "3. Jupiter is the largest planet.",
+        "4. Venus is smaller than Earth.",
+        "5. Saturn is large but smaller than Jupiter."
+      ]
+    },
+    "correct_answer": "3",
+    "is_correct": true
+  }
+]
