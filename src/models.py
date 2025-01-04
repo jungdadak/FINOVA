@@ -1,9 +1,11 @@
 # src/models.py
-from pydantic import BaseModel
-from typing import List, Dict, Optional
 from datetime import datetime
+from typing import List, Dict, Optional
+
+from pydantic import BaseModel
 
 
+# 기존 모델들은 유지
 class Question(BaseModel):
     id: str
     question: str
@@ -29,10 +31,11 @@ class QuestionResult(BaseModel):
     question_id: str
     start_time: datetime
     end_time: datetime
-    execution_time: float  # 초 단위
+    execution_time: float
     selected_answer: str
     is_correct: bool
     reasoning: List[str]
+
 
 class ExamResult(BaseModel):
     exam_name: str

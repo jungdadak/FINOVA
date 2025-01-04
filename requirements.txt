@@ -5,3 +5,4 @@ openai
 matplotlib
 pandas
 tqdm
+seaborn

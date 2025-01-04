@@ -5,56 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5958c9d2-66e7-43fa-8fae-060c37732d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/FINOVA_AGENT.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/10.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2023_1형/9.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/app_20250103_212659.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/app_20250103_212759.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/app_20250103_212955.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/app_20250103_213712.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/app_20250103_215441.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/app_20250103_221238.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/app_20250103_221456.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/2023_1형_corrections.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/2023_1형_score_pie_chart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/debug/2023_1형_debug.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/debug/test_exam_debug.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/exam_summary.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test_exam_score_pie_chart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/timing_distribution.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/timing_heatmap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/timing_vs_correctness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/openai_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/processor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/prompts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visualizer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_data_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_openai_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_processor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_prompts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_visualizer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/RAG/label.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/RAG/processed_재무보고를위한개념체계.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/RAG/재무보고를위한개념체계.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/RAG/재무보고를위한개념체계.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/comparison_txt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/pdf_to_text.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/preprocessing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/vectorize.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/vectors/content_vectors.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/vectors/section_mapping.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retrival/vectors/section_vectors.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/app_20250104_113100.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/app_20250104_113209.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/app_20250104_134405.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/app_20250104_134452.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2023_1형/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/2023_1형/1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/openai_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/openai_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_openai_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_openai_client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,12 +53,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2r4E6uiCGQgM0swgG14vyrOJ1j3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -85,19 +70,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/data/test_exam"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/junghyeon/PycharmProjects/FINOVA_AGENT/data/test_exam&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;
   }
-}]]></component>
+}</component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/3p/6m9ry1z14s9b1q1kbvvcp4q40000gn/T/qodana_output2/qodana.sarif.json" />
+        <option name="reportGuid" value="b07a14ce-4255-423f-a2d7-89e6c376d449" />
+        <option name="reportName" value="FINOVA_AGENT/qodana/2025-01-04" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/private/var/folders/3p/6m9ry1z14s9b1q1kbvvcp4q40000gn/T/qodana_output1/qodana.sarif.json" reportGuid="ddf59553-8913-4342-8446-4697c756e7c4" reportId="FINOVA_AGENT/qodana/2025-01-04" />
+      <ReportDescription localRun="true" path="/private/var/folders/3p/6m9ry1z14s9b1q1kbvvcp4q40000gn/T/qodana_output/qodana.sarif.json" reportGuid="064647cd-4ac8-4d8e-935d-3155839e405f" reportId="FINOVA_AGENT/qodana/2025-01-04" />
+      <ReportDescription localRun="true" path="/private/var/folders/3p/6m9ry1z14s9b1q1kbvvcp4q40000gn/T/qodana_output2/qodana.sarif.json" reportGuid="b07a14ce-4255-423f-a2d7-89e6c376d449" reportId="FINOVA_AGENT/qodana/2025-01-04" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data/test_exam" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Retrival" />
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
@@ -118,6 +126,9 @@
       <updated>1735809775125</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

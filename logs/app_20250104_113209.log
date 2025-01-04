@@ -1,0 +1,15 @@
+2025-01-04 11:32:09,606 - __main__ - INFO - Program started
+2025-01-04 11:32:09,606 - src.data_loader - DEBUG - DataLoader initialized with data_dir: data
+2025-01-04 11:32:09,606 - src.openai_client - DEBUG - OpenAIClient initialized with model_name: gpt-4o
+2025-01-04 11:32:09,606 - src.processor - DEBUG - Processor initialized
+2025-01-04 11:32:09,606 - src.visualizer - DEBUG - Visualizer initialized with output_dir: output
+2025-01-04 11:32:09,606 - __main__ - ERROR - An error occurred during exam processing: name 'questions' is not defined
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/main.py", line 54, in process_single_exam
+    result = processor.process_exam(exam_name, start_num, end_num)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 29, in process_exam
+    if not questions:
+           ^^^^^^^^^
+NameError: name 'questions' is not defined
+2025-01-04 11:32:09,607 - __main__ - INFO - Program completed

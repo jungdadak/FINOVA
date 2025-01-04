@@ -1,8 +1,9 @@
 # main.py
 import logging
+from datetime import datetime
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
-from datetime import datetime
+
 from src.data_loader import DataLoader
 from src.openai_client import OpenAIClient
 from src.processor import Processor
@@ -21,10 +22,12 @@ def setup_logging():
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
 
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    formatter = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    )
 
     # Rotating file handler
-    file_handler = RotatingFileHandler(log_file, maxBytes=10 ** 6, backupCount=5)
+    file_handler = RotatingFileHandler(log_file, maxBytes=10**6, backupCount=5)
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
@@ -36,7 +39,9 @@ def setup_logging():
     logger.addHandler(console_handler)
 
 
-def process_single_exam(exam_name: str = None, start_num: int = None, end_num: int = None):
+def process_single_exam(
+    exam_name: str = None, start_num: int = None, end_num: int = None
+):
     logger = logging.getLogger(__name__)
 
     data_loader = DataLoader()
@@ -101,7 +106,7 @@ def main():
     process_single_exam(
         exam_name="2023_1형",
         start_num=1,  # Optional: 시작 문제 번호
-        end_num=10  # Optional: 끝 문제 번호
+        end_num=10,  # Optional: 끝 문제 번호
     )
 
     logger.info("Program completed")

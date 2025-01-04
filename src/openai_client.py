@@ -1,14 +1,17 @@
 # src/openai_client.py
-import openai
 import logging
-import re
-import json
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Optional
+
+import openai
+from openai.types.chat import ChatCompletion, ChatCompletionMessage
+
 from src.config import settings
-from src.models import GPTResponse
-from src.prompts import Prompts  # Add this import
+from src.models import GPTResponse  # 기존 모델과의 호환성 유지
+from src.prompts import Prompts
+from src.schemas import AnswerResponse
 
 logger = logging.getLogger(__name__)
+
 
 class OpenAIClient:
     def __init__(self, model_name: str = settings.model_name):
@@ -16,91 +19,65 @@ class OpenAIClient:
         openai.api_key = settings.openai_api_key
         logger.debug(f"OpenAIClient initialized with model_name: {self.model}")
 
-    def get_response(self, question: str, options: List[str], data: Optional[Dict] = None) -> GPTResponse:
+    def get_response(
+        self, question: str, options: List[str], data: Optional[Dict] = None
+    ) -> GPTResponse:
+        """
+        질문에 대한 응답을 생성합니다.
+        기존 GPTResponse 형식과의 호환성을 유지합니다.
+        """
         logger.info("Starting OpenAI API request")
         prompt = Prompts.get_question_prompt(question, options, data)
         logger.debug(f"Constructed prompt:\n{prompt}")
 
         try:
-            response = openai.ChatCompletion.create(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": Prompts.SYSTEM_MESSAGE},
-                    {"role": "user", "content": prompt},
-                ],
-                temperature=0.2,
-                max_tokens=500,
+            response = self._make_api_call(
+                prompt=prompt,
             )
             logger.info("OpenAI API call successful")
+
+            # AnswerResponse에서 GPTResponse로 변환
+            structured_response = self._validate_and_parse_response(response)
+            return GPTResponse(
+                selected_answer=structured_response.selected_answer,
+                reasoning=structured_response.reasoning,
+            )
+
         except Exception as e:
             logger.error(f"Error during OpenAI API call: {e}", exc_info=True)
-            raise ValueError(f"Error during OpenAI API call: {e}")
+            raise ValueError(f"Error during OpenAI API call: {str(e)}")
 
-
-        try:
-            gpt_output = response.choices[0].message['content'].strip()
-            logger.debug(f"Raw GPT response:\n{gpt_output}")
-            gpt_output_dict = self._extract_json(gpt_output)
-            logger.debug(f"Parsed GPT response:\n{gpt_output_dict}")
-            parsed_response = GPTResponse.model_validate(gpt_output_dict)
-            logger.info("GPT response successfully parsed")
-        except Exception as e:
-            logger.error(f"Failed to parse GPT response: {e}", exc_info=True)
-            raise ValueError(f"Failed to parse GPT response: {e}")
-
-        return parsed_response
-
-    def _extract_json(self, content: str) -> Dict[str, Any]:
-        # 전체 응답 로깅
-        logger.debug(f"Raw response content:\n{content}")
-
-        try:
-            # 먼저 전체 내용을 JSON으로 파싱 시도
-            return json.loads(content)
-        except json.JSONDecodeError:
-            # JSON 코드 블록 찾기
-            json_match = re.search(r"```(?:json)?\s*(\{[\s\S]*?\})\s*```", content, re.DOTALL)
-            if json_match:
-                try:
-                    return json.loads(json_match.group(1))
-                except json.JSONDecodeError:
-                    logger.debug("Failed to parse JSON in code block")
-
-            # 중괄호로 둘러싸인 JSON 찾기
-            json_match = re.findall(r"\{[\s\S]*?\}", content)
-            for potential_json in json_match:
-                try:
-                    return json.loads(potential_json)
-                except json.JSONDecodeError:
-                    continue
-
-            # JSON 문자열 정리 시도
-            try:
-                # 작은따옴표를 큰따옴표로 변환
-                cleaned_content = content.replace("'", '"')
-                # 주석 제거
-                cleaned_content = re.sub(r"//.*?\n", "\n", cleaned_content)
-                return json.loads(cleaned_content)
-            except json.JSONDecodeError:
-                logger.error(f"Failed to parse JSON. Raw content:\n{content}")
-                raise ValueError("No valid JSON found in the response")
-
-    @staticmethod
-    def construct_prompt(question: str, options: List[str]) -> str:
-        options_formatted = "\n".join(options)
-        prompt = (
-            f"Please provide the correct answer and reasoning for each option in JSON format.\n\n"
-            f"Question: {question}\n\n"
-            f"Options:\n{options_formatted}\n\n"
-            f"Response format:\n{{\n"
-            f'  "selected_answer": "1",\n'
-            f'  "reasoning": [\n'
-            f'    "1. ...",\n'
-            f'    "2. ...",\n'
-            f'    "3. ...",\n'
-            f'    "4. ...",\n'
-            f'    "5. ..."\n'
-            f'  ]\n'
-            f"}}"
+    def _make_api_call(
+        self,
+        prompt: str,
+        temperature: float = 0.2,
+        max_tokens: int = 500,
+    ) -> ChatCompletion:
+        return openai.beta.chat.completions.parse(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": Prompts.SYSTEM_MESSAGE},
+                {"role": "user", "content": prompt},
+            ],
+            response_format=AnswerResponse,
+            temperature=temperature,
+            max_tokens=max_tokens,
         )
-        return prompt
+
+    def _validate_and_parse_response(self, response: ChatCompletion) -> AnswerResponse:
+        message: ChatCompletionMessage = response.choices[0].message
+
+        if message.refusal:
+            refusal_msg = message.refusal
+            logger.warning(f"Model refused to answer: {refusal_msg}")
+            raise ValueError(f"Model refused to answer: {refusal_msg}")
+
+        if response.choices[0].finish_reason == "length":
+            logger.warning("Response truncated due to length limit")
+            raise ValueError("Response was truncated due to length limit")
+
+        if response.choices[0].finish_reason == "content_filter":
+            logger.warning("Response filtered by content policy")
+            raise ValueError("Response was filtered due to content policy")
+
+        return message.parsed

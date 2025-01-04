@@ -1,0 +1,1037 @@
+2025-01-04 13:44:52,767 - __main__ - INFO - Program started
+2025-01-04 13:44:52,767 - src.data_loader - DEBUG - DataLoader initialized with data_dir: data
+2025-01-04 13:44:52,767 - src.openai_client - DEBUG - OpenAIClient initialized with model_name: gpt-4o
+2025-01-04 13:44:52,767 - src.processor - DEBUG - Processor initialized
+2025-01-04 13:44:52,767 - src.visualizer - DEBUG - Visualizer initialized with output_dir: output
+2025-01-04 13:44:52,768 - src.data_loader - DEBUG - Loaded question ID: Q1 from 1.json
+2025-01-04 13:44:52,768 - src.data_loader - DEBUG - Loaded question ID: Q2 from 2.json
+2025-01-04 13:44:52,768 - src.data_loader - DEBUG - Loaded question ID: Q3 from 3.json
+2025-01-04 13:44:52,769 - src.data_loader - DEBUG - Loaded question ID: Q4 from 4.json
+2025-01-04 13:44:52,769 - src.data_loader - DEBUG - Loaded question ID: Q5 from 5.json
+2025-01-04 13:44:52,769 - src.data_loader - DEBUG - Loaded question ID: Q6 from 6.json
+2025-01-04 13:44:52,769 - src.data_loader - DEBUG - Loaded question ID: Q7 from 7.json
+2025-01-04 13:44:52,769 - src.data_loader - DEBUG - Loaded question ID: Q8 from 8.json
+2025-01-04 13:44:52,769 - src.data_loader - DEBUG - Loaded question ID: Q9 from 9.json
+2025-01-04 13:44:52,770 - src.data_loader - DEBUG - Loaded question ID: Q10 from 10.json
+2025-01-04 13:44:52,770 - src.data_loader - INFO - Loaded 10 questions from 2023_1형
+2025-01-04 13:44:52,770 - src.processor - INFO - Processing 10 questions for exam '2023_1형'
+2025-01-04 13:44:52,783 - src.processor - INFO - Processing question 1/10 (ID: Q1)
+2025-01-04 13:44:52,783 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:52,783 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: 재무보고를 위한 개념체계’에서 인식과 제거에 대한 다음 설명 중 옳지 않은 것은?
+
+Options:
+1. 1. 인식은 자산, 부채, 자본, 수익 또는 비용과 같은 재무제표 요소중 하나의 정의를 충족하는 항목을 재무상태표나 재무성과표에포함하기 위하여 포착하는 과정이다.
+2. 2.  거래나 그 밖의 사건에서 발생된 자산이나 부채의 최초 인식에따라 수익과 관련 비용을 동시에 인식할 수 있다. 수익과 관련 비용의 동시 인식은 때때로 수익과 관련 원가의 대응을 나타낸다
+3. 3. 재무제표 이용자들에게 자산이나 부채 그리고 이에 따른 결과로 발생하는 수익, 비용 또는 자본변동에 대한 목적적합한 정보와 충실한 표현 중 어느 하나를 제공하는 경우 자산이나 부채를
+인식한다.
+4. 4. 자산은 일반적으로 기업이 인식한 자산의 전부 또는 일부에 대한 통제를 상실 하였을 때 제거하고, 부채는 일반적으로 기업이 인식한 부채의 전부 또는 일부에 대한 현재의무를 더 이상
+부담하지 않을 때 제거한다.
+5. 5. 제거에 대한 회계 요구사항은 제거를 초래하는 거래나 그 밖의 사건 후의 잔여 자산과 부채, 그리고 그 거래나 그 밖의 사건으로인한 기업의 자산과 부채의 변동 두 가지를 모두 충실히 표현하는
+것을 목표로 한다..
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:52,828 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2d4e0>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: 재무보고를 위한 개념체계’에서 인식과 제거에 대한 다음 설명 중 옳지 않은 것은?\n\nOptions:\n1. 1. 인식은 자산, 부채, 자본, 수익 또는 비용과 같은 재무제표 요소중 하나의 정의를 충족하는 항목을 재무상태표나 재무성과표에포함하기 위하여 포착하는 과정이다.\n2. 2.  거래나 그 밖의 사건에서 발생된 자산이나 부채의 최초 인식에따라 수익과 관련 비용을 동시에 인식할 수 있다. 수익과 관련 비용의 동시 인식은 때때로 수익과 관련 원가의 대응을 나타낸다\n3. 3. 재무제표 이용자들에게 자산이나 부채 그리고 이에 따른 결과로 발생하는 수익, 비용 또는 자본변동에 대한 목적적합한 정보와 충실한 표현 중 어느 하나를 제공하는 경우 자산이나 부채를\n인식한다.\n4. 4. 자산은 일반적으로 기업이 인식한 자산의 전부 또는 일부에 대한 통제를 상실 하였을 때 제거하고, 부채는 일반적으로 기업이 인식한 부채의 전부 또는 일부에 대한 현재의무를 더 이상\n부담하지 않을 때 제거한다.\n5. 5. 제거에 대한 회계 요구사항은 제거를 초래하는 거래나 그 밖의 사건 후의 잔여 자산과 부채, 그리고 그 거래나 그 밖의 사건으로인한 기업의 자산과 부채의 변동 두 가지를 모두 충실히 표현하는\n것을 목표로 한다..\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:52,844 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:52,845 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-01-04 13:44:52,957 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ee41040>
+2025-01-04 13:44:52,958 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10edb7ed0> server_hostname='api.openai.com' timeout=5.0
+2025-01-04 13:44:52,997 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ee14800>
+2025-01-04 13:44:52,997 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:52,997 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:52,997 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:52,997 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:52,997 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:53,530 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:53 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'19'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'28898'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'2.204s'), (b'x-request-id', b'req_e0c3a100fa41ffa12fb4a7a171e2d18a'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=kdRJW2gbH.JT37erwZPi6dnIh2KYDQ2rzbDIUeFpP70-1735965893-1.0.1.1-ZbSeZVoviqhybtX7RpFjh97mydgPSJ8Uxg3gA52sIVoYg9YsTO25tZiVyK1_IDD36NCe97t05FZtV4HG15Q7_w; path=/; expires=Sat, 04-Jan-25 05:14:53 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=FD3GiWx_Ln4mCn9fVy6bjIEhPGf0rd.kRPTUyIW8Hpk-1735965893389-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc8936f6e33aa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:53,534 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:53,534 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:53,535 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:53,535 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:53,535 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:53,535 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers([('date', 'Sat, 04 Jan 2025 04:44:53 GMT'), ('content-type', 'application/json'), ('content-length', '251'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-8fk8e6jqyftl6fzjsaimefjc'), ('openai-processing-ms', '19'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '500'), ('x-ratelimit-limit-tokens', '30000'), ('x-ratelimit-remaining-requests', '499'), ('x-ratelimit-remaining-tokens', '28898'), ('x-ratelimit-reset-requests', '120ms'), ('x-ratelimit-reset-tokens', '2.204s'), ('x-request-id', 'req_e0c3a100fa41ffa12fb4a7a171e2d18a'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=kdRJW2gbH.JT37erwZPi6dnIh2KYDQ2rzbDIUeFpP70-1735965893-1.0.1.1-ZbSeZVoviqhybtX7RpFjh97mydgPSJ8Uxg3gA52sIVoYg9YsTO25tZiVyK1_IDD36NCe97t05FZtV4HG15Q7_w; path=/; expires=Sat, 04-Jan-25 05:14:53 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=FD3GiWx_Ln4mCn9fVy6bjIEhPGf0rd.kRPTUyIW8Hpk-1735965893389-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '8fc8936f6e33aa48-ICN'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-01-04 13:44:53,535 - openai._base_client - DEBUG - request_id: req_e0c3a100fa41ffa12fb4a7a171e2d18a
+2025-01-04 13:44:53,535 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:53,541 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:53,541 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:53,542 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:53,544 - src.processor - ERROR - Error processing question 'Q1': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:53,547 - src.processor - INFO - Processing question 2/10 (ID: Q2)
+2025-01-04 13:44:53,547 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:53,547 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: '일반목적재무보고의 목적'에 대한 다음 설명 중 옳지 않은 것은?
+
+Options:
+1. 많은 현재 및 잠재적 투자자, 대여자 및 그 밖의 채권자는 정보를 제공하도록 보고기업에 직접 요구할 수 없고, 그들이 필요로 하는 재무정보의 많은 부분을 일반목적재무보고서에 의존해야만 한다.
+2. 회계기준위원회는 회계기준을 제정할 때 최대 다수의 주요이용자 수요를 충족하는 정보를 제공하기 위해 노력할 것이다. 그러나 공통된 정보수요에 초점을 맞춘다고 해서 보고기업으로 하여금 주요이용자의 특정 일부집단에게 가장 유용한 추가 정보를 포함하지 못하게 하는 것은 아니다.
+3. 보고기업의 경영진도 해당 기업에 대한 재무정보에 관심이 있다. 그러나 경영진은 필요로 하는 재무정보를 내부에서 구할 수 있기 때문에 일반목적재무보고서에 의존할 필요가 없다.
+4. 보고기업의 경제적자원 및 청구권의 성격 및 금액에 대한 정보는 이용자들이 보고기업의 재무적 강점과 약점을 식별하는데 도움을 줄 수 있다.
+5. 보고기업의 경제적자원 및 청구권은 재무성과 외의 사유로는 변동될 수 없다.
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:53,551 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2f880>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: \'일반목적재무보고의 목적\'에 대한 다음 설명 중 옳지 않은 것은?\n\nOptions:\n1. 많은 현재 및 잠재적 투자자, 대여자 및 그 밖의 채권자는 정보를 제공하도록 보고기업에 직접 요구할 수 없고, 그들이 필요로 하는 재무정보의 많은 부분을 일반목적재무보고서에 의존해야만 한다.\n2. 회계기준위원회는 회계기준을 제정할 때 최대 다수의 주요이용자 수요를 충족하는 정보를 제공하기 위해 노력할 것이다. 그러나 공통된 정보수요에 초점을 맞춘다고 해서 보고기업으로 하여금 주요이용자의 특정 일부집단에게 가장 유용한 추가 정보를 포함하지 못하게 하는 것은 아니다.\n3. 보고기업의 경영진도 해당 기업에 대한 재무정보에 관심이 있다. 그러나 경영진은 필요로 하는 재무정보를 내부에서 구할 수 있기 때문에 일반목적재무보고서에 의존할 필요가 없다.\n4. 보고기업의 경제적자원 및 청구권의 성격 및 금액에 대한 정보는 이용자들이 보고기업의 재무적 강점과 약점을 식별하는데 도움을 줄 수 있다.\n5. 보고기업의 경제적자원 및 청구권은 재무성과 외의 사유로는 변동될 수 없다.\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:53,552 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:53,552 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:53,553 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:53,553 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:53,553 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:53,553 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:54,254 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:53 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'15'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'28111'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'3.776s'), (b'x-request-id', b'req_378878f76b90f54e58408ca9682f6af1'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc89372e8ebaa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:54,256 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:54,257 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:54,257 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:54,257 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:54,257 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:54,258 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers({'date': 'Sat, 04 Jan 2025 04:44:53 GMT', 'content-type': 'application/json', 'content-length': '251', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8fk8e6jqyftl6fzjsaimefjc', 'openai-processing-ms': '15', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '28111', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '3.776s', 'x-request-id': 'req_378878f76b90f54e58408ca9682f6af1', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8fc89372e8ebaa48-ICN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-01-04 13:44:54,258 - openai._base_client - DEBUG - request_id: req_378878f76b90f54e58408ca9682f6af1
+2025-01-04 13:44:54,259 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:54,260 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:54,260 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:54,260 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:54,261 - src.processor - ERROR - Error processing question 'Q2': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:54,263 - src.processor - INFO - Processing question 3/10 (ID: Q3)
+2025-01-04 13:44:54,264 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:54,264 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: 유통업을 영위하고 있는 ㈜대한은 재고자산에 대해 계속기록법과 가중평균법을 적용하고 있으며, 기말에는 실지재고조사를 실시하고 있다. · ㈜대한이 6월 1일에 계약한 상품 200개는 6월 30일에창고로입고되었다.
+· ㈜대한이 9월 1일에 계약한 상품 200개는 11월1일에선적되었으나 12월 말 현재까지 운송중인 상태로 확인되었다.· 12월 말 현재 ㈜대한이 창고에 보관중인 상품의 총 수량은300개이고 실사를 통해 다음과 같은 사실을 발견하였다. ㈜대한은 12월 1일에 ㈜민국으로부터 상품 200개(단위원가￦300)에 대해 판매를 수탁받아 창고에 보관하였으며,이 중 20%를 12월 중에 판매하였다.· ㈜대한은 12월 1일에 ㈜만세와 위탁판매계약을 체결하고상품 50개(단위원가 ￦240)를 적송하였다. 기말 실사후㈜만세가 12월 말 현재 보관중인 상품은 20개임을 확인하였다.· ㈜대한은 재고자산감모손실과 재고자산평가손실(환입)을매출원가에서 조정하고 있다.· 수탁품과 적송품에서는 감모(분실, 도난 등)가 발생하지 않았다.20x1년 기말재고자산의 단위당 순실현가능가치가 ￦200이고,재고자산평가충당금의 기초잔액이 ￦3,000일 때, ㈜대한의 20x1년도매출원가는 얼마인가?
+
+Options:
+1. ￦72,000
+2. ￦74,400
+3. ￦81,800
+4. ￦85,000
+5. ￦88,000
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:54,268 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2f880>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: 유통업을 영위하고 있는 ㈜대한은 재고자산에 대해 계속기록법과 가중평균법을 적용하고 있으며, 기말에는 실지재고조사를 실시하고 있다. · ㈜대한이 6월 1일에 계약한 상품 200개는 6월 30일에창고로입고되었다.\n· ㈜대한이 9월 1일에 계약한 상품 200개는 11월1일에선적되었으나 12월 말 현재까지 운송중인 상태로 확인되었다.· 12월 말 현재 ㈜대한이 창고에 보관중인 상품의 총 수량은300개이고 실사를 통해 다음과 같은 사실을 발견하였다. ㈜대한은 12월 1일에 ㈜민국으로부터 상품 200개(단위원가￦300)에 대해 판매를 수탁받아 창고에 보관하였으며,이 중 20%를 12월 중에 판매하였다.· ㈜대한은 12월 1일에 ㈜만세와 위탁판매계약을 체결하고상품 50개(단위원가 ￦240)를 적송하였다. 기말 실사후㈜만세가 12월 말 현재 보관중인 상품은 20개임을 확인하였다.· ㈜대한은 재고자산감모손실과 재고자산평가손실(환입)을매출원가에서 조정하고 있다.· 수탁품과 적송품에서는 감모(분실, 도난 등)가 발생하지 않았다.20x1년 기말재고자산의 단위당 순실현가능가치가 ￦200이고,재고자산평가충당금의 기초잔액이 ￦3,000일 때, ㈜대한의 20x1년도매출원가는 얼마인가?\n\nOptions:\n1. ￦72,000\n2. ￦74,400\n3. ￦81,800\n4. ￦85,000\n5. ￦88,000\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:54,269 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:54,270 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:54,270 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:54,270 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:54,270 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:54,270 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:54,869 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:54 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'20'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'27359'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'5.281s'), (b'x-request-id', b'req_8ad853e0847b5f8f68f54bc95aa4196f'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc893775ca1aa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:54,871 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:54,872 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:54,872 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:54,872 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:54,872 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:54,873 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers({'date': 'Sat, 04 Jan 2025 04:44:54 GMT', 'content-type': 'application/json', 'content-length': '251', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8fk8e6jqyftl6fzjsaimefjc', 'openai-processing-ms': '20', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '27359', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '5.281s', 'x-request-id': 'req_8ad853e0847b5f8f68f54bc95aa4196f', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8fc893775ca1aa48-ICN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-01-04 13:44:54,873 - openai._base_client - DEBUG - request_id: req_8ad853e0847b5f8f68f54bc95aa4196f
+2025-01-04 13:44:54,873 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:54,874 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:54,874 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:54,874 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:54,875 - src.processor - ERROR - Error processing question 'Q3': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:54,876 - src.processor - INFO - Processing question 4/10 (ID: Q4)
+2025-01-04 13:44:54,876 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:54,876 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: 기업회계기준서 제1002호 '재고자산'에 대한 다음 설명 중 옳지 않은 것은?
+
+Options:
+1. 공정가치에서 처분부대원가를 뺀 금액으로 측정한 일반상품 중개기업의 재고자산에 대해서는 저가법을 적용하지 않는다.
+2. 순실현가능가치는 재고자산의 주된 (또는 가장 유리한) 시장에서 시장참여자 사이에 일어날 수 있는 정상거래의 가격에서 처분 부대원가를 뺀 금액으로 측정하기 때문에 기업특유의 가치가 아니다.
+3. 생물자산에서 수확한 농림어업 수확물로 구성된 재고자산은 공정가치에서 처분부대원가를 뺀 금액으로 측정하여 수확 시점에 최초로 인식한다.
+4. 재고자산의 감액을 초래했던 상황이 해소되거나 경제상황의 변동으로 순실현가능가치가 상승한 명백한 증거가 있는 경우에는 최초의 장부금액을 초과하지 않는 범위 내에서 평가손실을 환입한다.
+5. 성격과 용도 면에서 유사한 재고자산에는 동일한 단위원가 결정 방법을 적용하여야 하며, 성격이나 용도 면에서 차이가 있는 재고자산에는 서로 다른 단위원가 결정방법을 적용할 수 있다.
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:54,881 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2f880>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: 기업회계기준서 제1002호 \'재고자산\'에 대한 다음 설명 중 옳지 않은 것은?\n\nOptions:\n1. 공정가치에서 처분부대원가를 뺀 금액으로 측정한 일반상품 중개기업의 재고자산에 대해서는 저가법을 적용하지 않는다.\n2. 순실현가능가치는 재고자산의 주된 (또는 가장 유리한) 시장에서 시장참여자 사이에 일어날 수 있는 정상거래의 가격에서 처분 부대원가를 뺀 금액으로 측정하기 때문에 기업특유의 가치가 아니다.\n3. 생물자산에서 수확한 농림어업 수확물로 구성된 재고자산은 공정가치에서 처분부대원가를 뺀 금액으로 측정하여 수확 시점에 최초로 인식한다.\n4. 재고자산의 감액을 초래했던 상황이 해소되거나 경제상황의 변동으로 순실현가능가치가 상승한 명백한 증거가 있는 경우에는 최초의 장부금액을 초과하지 않는 범위 내에서 평가손실을 환입한다.\n5. 성격과 용도 면에서 유사한 재고자산에는 동일한 단위원가 결정 방법을 적용하여야 하며, 성격이나 용도 면에서 차이가 있는 재고자산에는 서로 다른 단위원가 결정방법을 적용할 수 있다.\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:54,881 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:54,882 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:54,882 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:54,882 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:54,882 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:54,882 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:55,483 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:55 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'14'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'26617'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'6.765s'), (b'x-request-id', b'req_94f4830a1b2b150d2bb8d8b108dfdf7c'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc8937b2f97aa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:55,485 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:55,485 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:55,486 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:55,487 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:55,487 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:55,487 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers({'date': 'Sat, 04 Jan 2025 04:44:55 GMT', 'content-type': 'application/json', 'content-length': '251', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8fk8e6jqyftl6fzjsaimefjc', 'openai-processing-ms': '14', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '26617', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '6.765s', 'x-request-id': 'req_94f4830a1b2b150d2bb8d8b108dfdf7c', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8fc8937b2f97aa48-ICN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-01-04 13:44:55,487 - openai._base_client - DEBUG - request_id: req_94f4830a1b2b150d2bb8d8b108dfdf7c
+2025-01-04 13:44:55,487 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:55,488 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:55,488 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:55,488 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:55,489 - src.processor - ERROR - Error processing question 'Q4': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:55,491 - src.processor - INFO - Processing question 5/10 (ID: Q5)
+2025-01-04 13:44:55,491 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:55,491 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: ㈜대한은 20x1년 1월 1일에 기계장치를 취득하여 감가상각하고 있다. 관련 내용이 주어질 때, ㈜대한의 기계장치에 대한 회계처리가 20x1년도와 20x2년도 당기순이익에 미치는 영향은 각각 얼마인가?
+
+Options:
+1. ￦480,000 감소, ￦0 (영향 없음)
+2. ￦480,000 감소, ￦30,000 감소
+3. ￦480,000 감소, ￦200,000 감소
+4. ￦280,000 감소, ￦30,000 감소
+5. ￦280,000 감소, ￦200,000 감소
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:55,496 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2f880>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: ㈜대한은 20x1년 1월 1일에 기계장치를 취득하여 감가상각하고 있다. 관련 내용이 주어질 때, ㈜대한의 기계장치에 대한 회계처리가 20x1년도와 20x2년도 당기순이익에 미치는 영향은 각각 얼마인가?\n\nOptions:\n1. ￦480,000 감소, ￦0 (영향 없음)\n2. ￦480,000 감소, ￦30,000 감소\n3. ￦480,000 감소, ￦200,000 감소\n4. ￦280,000 감소, ￦30,000 감소\n5. ￦280,000 감소, ￦200,000 감소\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:55,496 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:55,497 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:55,497 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:55,497 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:55,497 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:55,497 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:55,891 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:55 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'27'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'26070'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'7.859s'), (b'x-request-id', b'req_1f9f0d54e43ae587c99bb685e0f5ce7a'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc8937f0a91aa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:55,893 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:55,894 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:55,894 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:55,894 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:55,894 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:55,895 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers({'date': 'Sat, 04 Jan 2025 04:44:55 GMT', 'content-type': 'application/json', 'content-length': '251', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8fk8e6jqyftl6fzjsaimefjc', 'openai-processing-ms': '27', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '26070', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '7.859s', 'x-request-id': 'req_1f9f0d54e43ae587c99bb685e0f5ce7a', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8fc8937f0a91aa48-ICN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-01-04 13:44:55,895 - openai._base_client - DEBUG - request_id: req_1f9f0d54e43ae587c99bb685e0f5ce7a
+2025-01-04 13:44:55,895 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:55,897 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:55,897 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:55,897 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:55,898 - src.processor - ERROR - Error processing question 'Q5': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:55,900 - src.processor - INFO - Processing question 6/10 (ID: Q6)
+2025-01-04 13:44:55,900 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:55,900 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: ㈜대한은 20x1년 1월 1일에 기계장치를 취득하여 원가모형을 적용하고 있다. 관련 정보가 주어질 때, ㈜대한의 기계장치에 대한 회계처리가 20x3년도 당기순이익에 미치는 영향은 얼마인가?
+
+Options:
+1. ￦20,000 감소
+2. ￦10,000 감소
+3. ￦0 (영향 없음)
+4. ￦10,000 증가
+5. ￦20,000 증가
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:55,905 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2f880>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: ㈜대한은 20x1년 1월 1일에 기계장치를 취득하여 원가모형을 적용하고 있다. 관련 정보가 주어질 때, ㈜대한의 기계장치에 대한 회계처리가 20x3년도 당기순이익에 미치는 영향은 얼마인가?\n\nOptions:\n1. ￦20,000 감소\n2. ￦10,000 감소\n3. ￦0 (영향 없음)\n4. ￦10,000 증가\n5. ￦20,000 증가\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:55,906 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:55,906 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:55,906 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:55,907 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:55,907 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:55,907 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:56,513 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:56 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'19'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'25445'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'9.108s'), (b'x-request-id', b'req_5b207ea7a7ce18c2180c76a9cd0cf6aa'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc893818c4faa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:56,515 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:56,515 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:56,515 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:56,515 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:56,516 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:56,516 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers({'date': 'Sat, 04 Jan 2025 04:44:56 GMT', 'content-type': 'application/json', 'content-length': '251', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8fk8e6jqyftl6fzjsaimefjc', 'openai-processing-ms': '19', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '25445', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '9.108s', 'x-request-id': 'req_5b207ea7a7ce18c2180c76a9cd0cf6aa', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8fc893818c4faa48-ICN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-01-04 13:44:56,516 - openai._base_client - DEBUG - request_id: req_5b207ea7a7ce18c2180c76a9cd0cf6aa
+2025-01-04 13:44:56,517 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:56,517 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:56,517 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:56,518 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:56,518 - src.processor - ERROR - Error processing question 'Q6': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:56,520 - src.processor - INFO - Processing question 7/10 (ID: Q7)
+2025-01-04 13:44:56,520 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:56,520 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: 무형자산의 인식과 측정에 대한 다음 설명 중 옳지 않은 것은?
+
+Options:
+1. 개별 취득하는 무형자산과 사업결합으로 취득하는 무형자산은 무형자산 인식조건 중 자산에서 발생하는 미래경제적효익이 기업에 유입될 가능성이 높다는 조건을 항상 충족하는 것은 아니다.
+2. 무형자산을 최초로 인식할 때에는 원가로 측정하며, 사업결합으로 취득하는 무형자산의 원가는 취득일 공정가치로 한다.
+3. 사업결합으로 취득하는 자산이 분리가능하거나 계약상 또는 기타 법적 권리에서 발생한다면, 그 자산의 공정가치를 신뢰성 있게 측정하기에 충분한 정보가 존재한다.
+4. 내부적으로 창출한 영업권과 내부 프로젝트의 연구단계에서 발생한 지출은 자산으로 인식하지 않는다.
+5. 내부적으로 창출한 무형자산의 원가는 그 자산의 창출, 제조 및 경영자가 의도하는 방식으로 운영될 수 있게 준비하는데 필요한 직접 관련된 모든 원가를 포함한다.
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:56,525 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2f880>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: 무형자산의 인식과 측정에 대한 다음 설명 중 옳지 않은 것은?\n\nOptions:\n1. 개별 취득하는 무형자산과 사업결합으로 취득하는 무형자산은 무형자산 인식조건 중 자산에서 발생하는 미래경제적효익이 기업에 유입될 가능성이 높다는 조건을 항상 충족하는 것은 아니다.\n2. 무형자산을 최초로 인식할 때에는 원가로 측정하며, 사업결합으로 취득하는 무형자산의 원가는 취득일 공정가치로 한다.\n3. 사업결합으로 취득하는 자산이 분리가능하거나 계약상 또는 기타 법적 권리에서 발생한다면, 그 자산의 공정가치를 신뢰성 있게 측정하기에 충분한 정보가 존재한다.\n4. 내부적으로 창출한 영업권과 내부 프로젝트의 연구단계에서 발생한 지출은 자산으로 인식하지 않는다.\n5. 내부적으로 창출한 무형자산의 원가는 그 자산의 창출, 제조 및 경영자가 의도하는 방식으로 운영될 수 있게 준비하는데 필요한 직접 관련된 모든 원가를 포함한다.\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:56,525 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:56,526 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:56,526 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:56,526 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:56,526 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:56,526 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:57,122 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:56 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'19'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'24742'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'10.514s'), (b'x-request-id', b'req_9dfac7489fca2bdd708c39a60f65c5c4'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc893857eeeaa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:57,124 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:57,124 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:57,124 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:57,125 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:57,125 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:57,125 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers({'date': 'Sat, 04 Jan 2025 04:44:56 GMT', 'content-type': 'application/json', 'content-length': '251', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8fk8e6jqyftl6fzjsaimefjc', 'openai-processing-ms': '19', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '24742', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '10.514s', 'x-request-id': 'req_9dfac7489fca2bdd708c39a60f65c5c4', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8fc893857eeeaa48-ICN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-01-04 13:44:57,125 - openai._base_client - DEBUG - request_id: req_9dfac7489fca2bdd708c39a60f65c5c4
+2025-01-04 13:44:57,125 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:57,126 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:57,126 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:57,127 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:57,128 - src.processor - ERROR - Error processing question 'Q7': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:57,130 - src.processor - INFO - Processing question 8/10 (ID: Q8)
+2025-01-04 13:44:57,130 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:57,130 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: ㈜대한은 20x1년 1월 1일에 취득하여 본사 사옥으로 사용하고 있던 건물(취득원가 ￦2,000,000, 내용연수 20년, 잔존가치 ￦200,000, 정액법 상각)을 20x3년 7월 1일에 ㈜민국에게 운용리스 목적으로 제공하였다. ㈜대한은 투자부동산에 대해서 공정가치모형을 적용하고 있으며, 유형자산에 대해서는 원가모형을 적용하고 있다. 건물의 공정가치는 다음과 같다.
+
+Options:
+1. ￦45,000 감소
+2. ￦455,000 증가
+3. ￦500,000 증가
+4. ￦600,000 증가
+5. ￦1,180,000 증가
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:57,134 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2f880>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: ㈜대한은 20x1년 1월 1일에 취득하여 본사 사옥으로 사용하고 있던 건물(취득원가 ￦2,000,000, 내용연수 20년, 잔존가치 ￦200,000, 정액법 상각)을 20x3년 7월 1일에 ㈜민국에게 운용리스 목적으로 제공하였다. ㈜대한은 투자부동산에 대해서 공정가치모형을 적용하고 있으며, 유형자산에 대해서는 원가모형을 적용하고 있다. 건물의 공정가치는 다음과 같다.\n\nOptions:\n1. ￦45,000 감소\n2. ￦455,000 증가\n3. ￦500,000 증가\n4. ￦600,000 증가\n5. ￦1,180,000 증가\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:57,135 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:57,136 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:57,136 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:57,136 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:57,136 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:57,136 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:57,735 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:57 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'13'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'24169'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'11.661s'), (b'x-request-id', b'req_3fb4aa3c7215479c5f99e54c44b8bdab'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc8938959e9aa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:57,737 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:57,738 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:57,739 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:57,739 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:57,739 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:57,739 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers({'date': 'Sat, 04 Jan 2025 04:44:57 GMT', 'content-type': 'application/json', 'content-length': '251', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8fk8e6jqyftl6fzjsaimefjc', 'openai-processing-ms': '13', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '24169', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '11.661s', 'x-request-id': 'req_3fb4aa3c7215479c5f99e54c44b8bdab', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8fc8938959e9aa48-ICN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-01-04 13:44:57,739 - openai._base_client - DEBUG - request_id: req_3fb4aa3c7215479c5f99e54c44b8bdab
+2025-01-04 13:44:57,740 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:57,741 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:57,741 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:57,741 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:57,742 - src.processor - ERROR - Error processing question 'Q8': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:57,744 - src.processor - INFO - Processing question 9/10 (ID: Q9)
+2025-01-04 13:44:57,744 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:57,744 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: ㈜대한은 20x1년 3월 1일부터 공장건물 신축공사를 실시하여 20x2년 9월 30일에 해당 공사를 완료하였다. 동 공장건물은 차입원가를 자본화하는 적격자산이다. ㈜대한이 20x2년도에 자본화할 차입원가는 얼마인가?
+
+Options:
+1. ￦16,450
+2. ￦21,900
+3. ￦23,400
+4. ￦42,700
+5. ￦53,200
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:57,749 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2f880>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: ㈜대한은 20x1년 3월 1일부터 공장건물 신축공사를 실시하여 20x2년 9월 30일에 해당 공사를 완료하였다. 동 공장건물은 차입원가를 자본화하는 적격자산이다. ㈜대한이 20x2년도에 자본화할 차입원가는 얼마인가?\n\nOptions:\n1. ￦16,450\n2. ￦21,900\n3. ￦23,400\n4. ￦42,700\n5. ￦53,200\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:57,750 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:57,750 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:57,751 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:57,751 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:57,751 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:57,751 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:58,126 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:58 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'13'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'23644'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'12.711s'), (b'x-request-id', b'req_d5d2076ab60641147b0c732569c8b7ff'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc8938d1ccfaa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:58,127 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:58,127 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:58,128 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:58,128 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:58,128 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:58,128 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers({'date': 'Sat, 04 Jan 2025 04:44:58 GMT', 'content-type': 'application/json', 'content-length': '251', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8fk8e6jqyftl6fzjsaimefjc', 'openai-processing-ms': '13', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '23644', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '12.711s', 'x-request-id': 'req_d5d2076ab60641147b0c732569c8b7ff', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8fc8938d1ccfaa48-ICN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-01-04 13:44:58,128 - openai._base_client - DEBUG - request_id: req_d5d2076ab60641147b0c732569c8b7ff
+2025-01-04 13:44:58,129 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:58,130 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:58,130 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:58,130 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:58,131 - src.processor - ERROR - Error processing question 'Q9': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:58,133 - src.processor - INFO - Processing question 10/10 (ID: Q10)
+2025-01-04 13:44:58,133 - src.openai_client - INFO - Starting OpenAI API request
+2025-01-04 13:44:58,133 - src.openai_client - DEBUG - Constructed prompt:
+Please analyze the following multiple choice question and provide your answer with reasoning.
+
+Question: ㈜대한은 ㈜민국이 20x1년 1월 1일에 발행한 사채를 발행일에 취득하였으며, 취득 시 동 사채를 기타포괄손익-공정가치 측정 금융자산(FVOCI 금융자산)으로 분류하였다. ㈜대한의 상기 금융자산이 (1)20x1년도 총포괄이익에 미치는 영향과 (2)20x2년도 당기순이익에 미치는 영향은 각각 얼마인가?
+
+Options:
+1. ￦206,520 감소, ￦213,200 증가
+2. ￦206,520 감소, ￦231,400 증가
+3. ￦186,520 감소, ￦213,200 증가
+4. ￦186,520 감소, ￦231,400 증가
+5. ￦186,520 감소, ￦121,200 증가
+
+아래의 JSON 형식으로 대답을 제공하세요
+{
+  "selected_answer": "1",  // The number (1-5) of your chosen option
+  "reasoning": [
+    "1.1번 보기가 왜 정확한지 또는 틀린지",
+    "2. 2번 보기가 왜 정확한지 또는 틀린지",
+    "3. 3번 보기가 왜 정확한지 또는 틀린지",
+    "4. 4번 보기가 왜 정확한지 또는 틀린지",
+    "5. 5번 보기가 왜 정확한지 또는 틀린지"
+  ]
+}
+2025-01-04 13:44:58,137 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Helper-Method': 'beta.chat.completions.parse'}, 'files': None, 'post_parser': <function Completions.parse.<locals>.parser at 0x10ee2f880>, 'json_data': {'messages': [{'role': 'system', 'content': '특별한 언급이 없는 한 기업의 보고기간(회계기간)은\n매년 1월 1일부터 12월 31일까지이다. 자료에서 제시한 것 외의\n사항은 고려하지 않고 답한다. 예를 들어, 법인세에 대한 언급이\n없으면 법인세효과는 고려하지 않는다. 또한 기업은 주권상장법인으로\n계속해서 한국채택국제회계기준(K-IFRS)을 적용'}, {'role': 'user', 'content': 'Please analyze the following multiple choice question and provide your answer with reasoning.\n\nQuestion: ㈜대한은 ㈜민국이 20x1년 1월 1일에 발행한 사채를 발행일에 취득하였으며, 취득 시 동 사채를 기타포괄손익-공정가치 측정 금융자산(FVOCI 금융자산)으로 분류하였다. ㈜대한의 상기 금융자산이 (1)20x1년도 총포괄이익에 미치는 영향과 (2)20x2년도 당기순이익에 미치는 영향은 각각 얼마인가?\n\nOptions:\n1. ￦206,520 감소, ￦213,200 증가\n2. ￦206,520 감소, ￦231,400 증가\n3. ￦186,520 감소, ￦213,200 증가\n4. ￦186,520 감소, ￦231,400 증가\n5. ￦186,520 감소, ￦121,200 증가\n\n아래의 JSON 형식으로 대답을 제공하세요\n{\n  "selected_answer": "1",  // The number (1-5) of your chosen option\n  "reasoning": [\n    "1.1번 보기가 왜 정확한지 또는 틀린지",\n    "2. 2번 보기가 왜 정확한지 또는 틀린지",\n    "3. 3번 보기가 왜 정확한지 또는 틀린지",\n    "4. 4번 보기가 왜 정확한지 또는 틀린지",\n    "5. 5번 보기가 왜 정확한지 또는 틀린지"\n  ]\n}'}], 'model': 'gpt-4o', 'max_tokens': 500, 'response_format': {'type': 'json_schema', 'json_schema': {'schema': {'additionalProperties': False, 'description': 'OpenAI Structured Output을 위한 응답 스키마', 'properties': {'selected_answer': {'description': '선택한 답변 번호', 'pattern': '^[1-5]$', 'title': 'Selected Answer', 'type': 'string'}, 'reasoning': {'description': '각 보기에 대한 reasoning', 'items': {'type': 'string'}, 'maxItems': 5, 'minItems': 5, 'title': 'Reasoning', 'type': 'array'}}, 'required': ['selected_answer', 'reasoning'], 'title': 'AnswerResponse', 'type': 'object'}, 'name': 'AnswerResponse', 'strict': True}}, 'stream': False, 'temperature': 0.2}}
+2025-01-04 13:44:58,138 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-04 13:44:58,139 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:58,139 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-01-04 13:44:58,139 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-04 13:44:58,139 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-01-04 13:44:58,139 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-04 13:44:58,654 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 04 Jan 2025 04:44:58 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'251'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8fk8e6jqyftl6fzjsaimefjc'), (b'openai-processing-ms', b'18'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'22953'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'14.093s'), (b'x-request-id', b'req_21f1ea350ccee5b4816cdaf4050f51d3'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8fc8938f8ec4aa48-ICN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-01-04 13:44:58,654 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-04 13:44:58,655 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-04 13:44:58,655 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-01-04 13:44:58,655 - httpcore.http11 - DEBUG - response_closed.started
+2025-01-04 13:44:58,655 - httpcore.http11 - DEBUG - response_closed.complete
+2025-01-04 13:44:58,655 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "400 Bad Request" Headers({'date': 'Sat, 04 Jan 2025 04:44:58 GMT', 'content-type': 'application/json', 'content-length': '251', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8fk8e6jqyftl6fzjsaimefjc', 'openai-processing-ms': '18', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '22953', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '14.093s', 'x-request-id': 'req_21f1ea350ccee5b4816cdaf4050f51d3', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '8fc8938f8ec4aa48-ICN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-01-04 13:44:58,655 - openai._base_client - DEBUG - request_id: req_21f1ea350ccee5b4816cdaf4050f51d3
+2025-01-04 13:44:58,656 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1040, in _request
+    response.raise_for_status()
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2025-01-04 13:44:58,656 - openai._base_client - DEBUG - Not retrying
+2025-01-04 13:44:58,656 - openai._base_client - DEBUG - Re-raising status error
+2025-01-04 13:44:58,657 - src.openai_client - ERROR - Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:58,657 - src.processor - ERROR - Error processing question 'Q10': Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 34, in get_response
+    response = self._make_api_call(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 56, in _make_api_call
+    return openai.beta.chat.completions.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/resources/beta/chat/completions.py", line 160, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 957, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 59, in process_exam
+    gpt_response = self.openai_client.get_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/openai_client.py", line 48, in get_response
+    raise ValueError(f"Error during OpenAI API call: {str(e)}")
+ValueError: Error during OpenAI API call: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'AnswerResponse': In context=('properties', 'selected_answer'), 'pattern' is not permitted.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-01-04 13:44:58,661 - __main__ - ERROR - An error occurred during exam processing: name 'exam_start_time' is not defined
+Traceback (most recent call last):
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/main.py", line 54, in process_single_exam
+    result = processor.process_exam(exam_name, start_num, end_num)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/junghyeon/PycharmProjects/FINOVA_AGENT/src/processor.py", line 115, in process_exam
+    exam_duration = (exam_end_time - exam_start_time).total_seconds()
+                                     ^^^^^^^^^^^^^^^
+NameError: name 'exam_start_time' is not defined. Did you mean: 'exam_end_time'?
+2025-01-04 13:44:58,666 - __main__ - INFO - Program completed
+2025-01-04 13:44:58,773 - httpcore.connection - DEBUG - close.started
+2025-01-04 13:44:58,775 - httpcore.connection - DEBUG - close.complete

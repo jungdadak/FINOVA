@@ -1,21 +1,25 @@
 # src/data_loader.py
-from pathlib import Path
 import json
+import logging
+from pathlib import Path
 from typing import List
+
 from src.config import settings
 from src.models import Question
-import logging
 
 logger = logging.getLogger(__name__)
 
 
 # src/data_loader.py
 class DataLoader:
+
     def __init__(self, data_dir: Path = settings.data_dir):
         self.data_dir = data_dir
         logger.debug(f"DataLoader initialized with data_dir: {self.data_dir}")
 
-    def load_questions(self, exam_name: str, start_num: int = None, end_num: int = None) -> List[Question]:
+    def load_questions(
+        self, exam_name: str, start_num: int = None, end_num: int = None
+    ) -> List[Question]:
         """
         Load questions from specified exam and question range
 
@@ -26,15 +30,19 @@ class DataLoader:
         """
         exam_path = self.data_dir / exam_name
         if not exam_path.exists() or not exam_path.is_dir():
-            logger.error(f"Exam folder '{exam_name}' does not exist at path: {exam_path}")
-            raise FileNotFoundError(f"Exam folder '{exam_name}' does not exist at path: {exam_path}")
+            logger.error(
+                f"Exam folder '{exam_name}' does not exist at path: {exam_path}"
+            )
+            raise FileNotFoundError(
+                f"Exam folder '{exam_name}' does not exist at path: {exam_path}"
+            )
 
         questions = []
 
         # Get all json files and sort them by question number
         json_files = sorted(
             exam_path.glob("*.json"),
-            key=lambda x: int(x.stem)  # Assumes filename is the question number
+            key=lambda x: int(x.stem),  # Assumes filename is the question number
         )
 
         # Filter files based on range if specified
